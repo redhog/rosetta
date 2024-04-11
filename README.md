@@ -1,4 +1,35 @@
+# Rosetta project
 
+## Goals
+
+* To convey current day knowledge and data to future archeologists
+* To convey human knowledge and data to aliens
+
+## Assumptions
+
+* The receiver is aware of the concept of turing completeness
+* The receiver has some kind of computation devices
+* The receiver does NOT know anything about
+  * Our human languages
+  * Out programming languages
+  * Our data encodings
+  * Our character sets
+  * Our computer architectures (e.g. von neuman, what a byte is)
+* It is easier to understand math than human language
+* It is easier to understand a running software than a static dataset
+
+## Method
+
+* Teach number representations by example using known sequences (integers, primes etc)
+* Teach a small programming language by example
+  * Validate using an example that is an interpreter for the language written in the language
+* Provide a hardware emulator
+  * Written in the language
+  * Capable of running a full Linux with standard user space (debian or other distro)
+  * Linux and filesystem encoded as array constant in source code
+
+
+```
 cd rv64gc-emu-software/output
 ../../rv64gc-emu/build/rv64gc_emu   --bios fw_jump.bin --kernel ../linux/buildroot/output/build/linux-5.15.43/arch/riscv/boot/Image --dtb dtb.dtb --font font.ttf
 
@@ -74,3 +105,4 @@ idx = (((CONFIG_PAGE_OFFSET) >> PGDIR_SHIFT) & (PTRS_PER_PGD - 1))
 
 
 pgd_index(a)  (((a) >> PGDIR_SHIFT) & (PTRS_PER_PGD - 1))
+```
