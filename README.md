@@ -29,6 +29,10 @@
   * Linux and filesystem encoded as array constant in source code
 
 
+## What's been done so far
+
+riscv_em branch for mmu: https://github.com/redhog/riscv_em/tree/sv39
+
 ```
 cd rv64gc-emu-software/output
 ../../rv64gc-emu/build/rv64gc_emu   --bios fw_jump.bin --kernel ../linux/buildroot/output/build/linux-5.15.43/arch/riscv/boot/Image --dtb dtb.dtb --font font.ttf
